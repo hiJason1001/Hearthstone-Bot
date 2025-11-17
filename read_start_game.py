@@ -5,11 +5,12 @@ def in_starting_hand(window):
         print("ERROR: Bad WINDOW in in_starting_hand")
         return None
 
-    rel_x1, rel_x2 = 0.4, 0.6
-    rel_y1, rel_y2 = 0.15, 0.19
+    rel_x1, rel_x2 = 0.42, 0.58
+    rel_y1, rel_y2 = 0.155, 0.195
     
     res = detect_text_in_region(window, (rel_x1, rel_y1, rel_x2, rel_y2))
-    if res == "Starting Hand" or res == "StartingHand" or res == "STARTINGHAND" or res == "STARTINGIHAND":
+    print(res)
+    if res == "Starting Hand" or res == "STANTINGINAND" or res == "STARTINGHAND" or res == "STARTINGIHAND" or res == "STANTINGINAND|" or "STANTING" in res:
         return True
 
     if res is None:

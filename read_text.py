@@ -22,6 +22,7 @@ def detect_text_in_region(window, rel_coords):
         window.width,
         window.height
     ))
+    # screenshot = cv2.imread("imgs/starting_hand.png")
     screenshot = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
 
     height, width, _ = screenshot.shape
@@ -37,7 +38,6 @@ def detect_text_in_region(window, rel_coords):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
-
     roi = screenshot[y1:y2, x1:x2]
 
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
@@ -48,7 +48,6 @@ def detect_text_in_region(window, rel_coords):
     text = raw.strip().upper().replace("\n", " ")
     
     return text
-
 
 """
 DOESNT WORK

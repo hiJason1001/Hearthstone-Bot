@@ -1,3 +1,7 @@
+"""
+1600 x 900
+"""
+
 import pyautogui
 import pygetwindow as gw
 import time
@@ -14,22 +18,11 @@ turn_count = 0
 MOUSE_SPEED = 0.2
 MOUSE_SPEED_FAST = 0.005
 
-cards = [
-    (0.33, 0.35),
-    (0.36, 0.38),
-    (0.38, 0.41),
-    (0.41, 0.43),
-    (0.43, 0.46),
-    (0.46, 0.48),
-    (0.48, 0.50),
-    (0.51, 0.525),
-    (0.53, 0.55),
-    (0.57, 0.60)
-]
+cards = [0.34, 0.37, 0.40, 0.425, 0.45, 0.48, 0.50, 0.53, 0.56, 0.60]
 
-enemy_minnions_x = [0.315, 0.385, 0.45, 0.5, 0.55, 0.615, 0.685]
+enemy_minnions_x = [0.30, 0.37, 0.44, 0.5, 0.56, 0.63, 0.70]
 enemy_minnions_y = 0.39
-player_minnions_x = [0.315, 0.385, 0.45, 0.5, 0.55, 0.615, 0.685]
+player_minnions_x = [0.30, 0.37, 0.44, 0.5, 0.56, 0.63, 0.70]
 player_minnions_y = 0.555
     
 def reset():
@@ -65,7 +58,7 @@ while not exit_bot.exit:
         while not in_starting_hand(window):
             time.sleep(0.5)
 
-        pyautogui.moveTo(window.left + 0.5 * width, window.top + 0.79 * height, duration=MOUSE_SPEED)
+        pyautogui.moveTo(window.left + 0.5 * width, window.top + 0.79 * height, duration=MOUSE_SPEED) # confirm replace hand button
         pyautogui.click()
         replace_hand = False
         time.sleep(5)
@@ -87,21 +80,13 @@ while not exit_bot.exit:
     target_y = int(0.2 * height)
     cards_to_play = cards
     if turn_count == 1:
-        cards_to_play = [cards[0], cards[2], cards[5], cards[7]]
+        cards_to_play = [cards[1], cards[3], cards[7], cards[9]]
     elif turn_count == 2:
         cards_to_play = [cards[0], cards[2], cards[4], cards[6], cards[8], cards[9]]
-    elif turn_count == 3:
-        cards_to_play = cards[1:9]
         
-    for (rel_x1, rel_x2) in cards_to_play:
-        rel_y1 = 0.9
-        rel_y2 = 1
-        x1 = int(rel_x1 * width)
-        y1 = int(rel_y1 * height)
-        x2 = int(rel_x2 * width)
-        y2 = int(rel_y2 * height)
-        start_x = int((x1 + x2) / 2 + (x2 - x1) * 0.2)
-        start_y = int((y1 + y2) / 2)
+    for x in cards_to_play:
+        start_x = int(x * width)
+        start_y = int(0.95 * height)
         
         # drag curr card to enemy face
         pyautogui.moveTo(window.left + start_x, window.top + start_y, duration=MOUSE_SPEED)
@@ -170,7 +155,7 @@ while not exit_bot.exit:
         
 
     # end turn
-    pyautogui.moveTo(window.left + 0.8 * width, window.top + 0.46 * height, duration=MOUSE_SPEED)
+    pyautogui.moveTo(window.left + 0.81 * width, window.top + 0.47 * height, duration=MOUSE_SPEED)
     pyautogui.click()
 
     time.sleep(1)

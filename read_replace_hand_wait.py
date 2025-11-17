@@ -7,10 +7,11 @@ def read_replace_hand_wait(window):
         print("ERROR: Bad WINDOW in read_replace_hand_wait")
         return None
 
-    rel_x1 = 0.423
+    # Opponent still choosing rectangle
+    rel_x1 = 0.418
     rel_y1 = 0.733
-    rel_x2 = 0.58
-    rel_y2 = 0.763
+    rel_x2 = 0.585
+    rel_y2 = 0.762
     
     res = detect_text_in_region(window, (rel_x1, rel_y1, rel_x2, rel_y2))
     
