@@ -10,7 +10,7 @@ def in_starting_hand(window):
     
     res = detect_text_in_region(window, (rel_x1, rel_y1, rel_x2, rel_y2))
     print(res)
-    if res == "Starting Hand" or res == "STANTINGINAND" or res == "STARTINGHAND" or res == "STARTINGIHAND" or res == "STANTINGINAND|" or "STANTING" in res:
+    if res == "Starting Hand" or res == "STANTINGINAND" or res == "STARTINGHAND" or res == "STARTINGIHAND" or res == "STANTINGINAND|" or "STANTING" in res or "STARTING" in res:
         return True
 
     if res is None:

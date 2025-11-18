@@ -17,7 +17,7 @@ class GameBot:
         if not active or active.title != "Hearthstone":
             return False
 
-        self.window = windows[0]
+        self.window = active
         return True
 
         

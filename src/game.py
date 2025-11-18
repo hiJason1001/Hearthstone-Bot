@@ -1,5 +1,3 @@
-
-import pyautogui
 import pygetwindow as gw
 import time
 import exit_bot
@@ -30,6 +28,7 @@ while not exit_bot.exit:
         print("IDK WHO'S TURN IT IS")
         time.sleep(1)
         continue
+    
     if bot.replace_hand:
         while not in_starting_hand(window):
             time.sleep(0.5)
