@@ -2,7 +2,7 @@
 DOESNT WORK
 """
 
-from read_text import detect_text_in_region, detect_digits_in_region
+from src.read_text import detect_text_in_region, detect_digits_in_region
 
 def read_mana(window):
     if window is None or window.width <= 0 or window.height <= 0 or window.isMinimized or window.left < 0 or window.top < 0:
