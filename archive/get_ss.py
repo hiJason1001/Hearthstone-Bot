@@ -1,7 +1,7 @@
 import pyautogui
 import pygetwindow as gw
 import time
-import exit_bot
+import src.exit_bot as exit_bot
 
 keyboard_listener = exit_bot.start_listener()
 
@@ -9,7 +9,7 @@ while not exit_bot.exit:
     active_window = gw.getActiveWindow()
     if not active_window or active_window.title != "Hearthstone":
         print("NOT IN HEARTHSTONE")
-        time.sleep(3)
+        time.sleep(0.5)
         continue
     
 

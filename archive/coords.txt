@@ -48,3 +48,30 @@ rel_y2 = 0.762
 Starting hand rectangle
 rel_x1, rel_x2 = 0.42, 0.58
 rel_y1, rel_y2 = 0.155, 0.195
+
+Play menu play button
+rel_x1, rel_x2 = 0.699, 0.76
+rel_y1, rel_y2 = 0.8, 0.85
+
+Error finding match "Error" text
+rel_x1, rel_x2 = 0.48, 0.52
+rel_y1, rel_y2 = 0.404, 0.424
+
+Error finding match "OK" box
+rel_x1, rel_x2 = 0.48, 0.51
+rel_y1, rel_y2 = 0.6, 0.62
+
+found match (my username: IDKWHATTODO) PVP
+rel_x1, rel_x2 = 0.06, 0.14
+rel_y1, rel_y2 = 0.84, 0.865
+Coord is slightly different for PVE
+rel_x1, rel_x2 = 0.06, 0.14
+rel_y1, rel_y2 = 0.847, 0.872
+
+in queue "finding opponent"
+rel_x1, rel_x2 = 0.43, 0.57
+rel_y1, rel_y2 = 0.19, 0.23
+
+end game "click to continue
+rel_x1, rel_x2 = 0.41, 0.59
+rel_y1, rel_y2 = 0.92, 0.96
