@@ -8,7 +8,7 @@ from game_bot import GameBot
 CONFIG
 """
 PVP = True
-SKIP_TURNS = True
+SKIP_TURNS = False
 
 keyboard_listener = exit_bot.start_listener()
 

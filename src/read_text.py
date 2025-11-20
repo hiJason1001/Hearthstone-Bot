@@ -99,7 +99,7 @@ def in_play_menu(window):
 
     res = detect_text_in_region(window, (menu_play_x1, menu_play_y1, menu_play_x2, menu_play_y2))
     print(res)
-    if "LAY" in res or "PLA" in res or "PLAY" in res or "A.) MA" in res:
+    if "LAY" in res or "PLA" in res or "PLAY" in res or "A.) MA" in res or "MAY" in res:
         return True
 
     return False
