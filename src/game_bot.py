@@ -85,7 +85,7 @@ class GameBot:
         pyautogui.moveTo(self.convert_x(minnion_x), self.convert_y(player_minnions_y), duration=MOUSE_SPEED_FAST)
         pyautogui.click()
         
-        pyautogui.moveTo(self.convert_x(enemy_face_x), self.convert_y(enemy_face_y), duration=MOUSE_SPEED) # enemy face
+        pyautogui.moveTo(self.convert_x(enemy_face_x), self.convert_y(enemy_face_y), duration=MOUSE_SPEED_FAST)
         pyautogui.click()
         for x in enemy_minnions_x:
             pyautogui.moveTo(self.convert_x(x), self.convert_y(enemy_minnions_y), duration=MOUSE_SPEED_FAST)
@@ -94,7 +94,7 @@ class GameBot:
         self.reset()
         
     def end_turn(self):
-        pyautogui.moveTo(self.convert_x(end_turn_button_x), self.convert_y(end_turn_button_y), duration=MOUSE_SPEED)
+        pyautogui.moveTo(self.convert_x(end_turn_button_x), self.convert_y(end_turn_button_y), duration=MOUSE_SPEED_FAST)
         pyautogui.click()
         self.reset()
         self.turn_count += 1
