@@ -71,6 +71,8 @@ while not exit_bot.exit:
             pyautogui.moveTo(window.left + reset_x * window.width, window.top + reset_y * window.height, duration=MOUSE_SPEED)
             pyautogui.click()
             time.sleep(0.5)
+            if exit_bot.exit:
+                break
         
         bot.reset_bot()
         time.sleep(4)
