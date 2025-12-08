@@ -28,8 +28,11 @@ discover3_y = 0.5
 end_turn_button_x = 0.81
 end_turn_button_y = 0.47 
 
-reset_x = 0.9
-reset_y = 0.8
+# old coord
+# reset_x = 0.9
+# reset_y = 0.8
+reset_x = 0.3
+reset_y = 0.75
 
 start_game_x1, start_game_x2 = 0.42, 0.58
 start_game_y1, start_game_y2 = 0.155, 0.195
@@ -70,3 +73,6 @@ found_match_PVE_y1, found_match_PVE_y2 = 0.847, 0.872
 
 click_to_continue_x1, click_to_continue_x2 = 0.41, 0.59
 click_to_continue_y1, click_to_continue_y2 = 0.92, 0.96
+
+rewind_keep_x = 0.3
+rewind_keep_y = 0.75

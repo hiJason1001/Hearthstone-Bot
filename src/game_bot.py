@@ -53,7 +53,7 @@ class GameBot:
         for minnion_x in player_minnions_x:
             pyautogui.moveTo(self.convert_x(minnion_x), self.convert_y(player_minnions_y), duration=MOUSE_SPEED_FAST)
             pyautogui.click()
-        
+
         self.reset()
         
     def play_hero_power(self):
@@ -153,9 +153,9 @@ class GameBot:
                 
             cards_to_play = cards_x
             if self.turn_count == 1:
-                cards_to_play = [cards_x[1], cards_x[3], cards_x[7], cards_x[9]]
+                cards_to_play = [cards_x[1], cards_x[3], cards_x[7]]
             elif self.turn_count == 2:
-                cards_to_play = [cards_x[0], cards_x[2], cards_x[4], cards_x[6], cards_x[8], cards_x[9]]
+                cards_to_play = [cards_x[0], cards_x[2], cards_x[4], cards_x[6], cards_x[8]]
                 
             for x in cards_to_play:
                 self.play_one_card(x)

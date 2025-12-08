@@ -17,20 +17,19 @@ def detect_text_in_region(window, rel_coords):
         print("ERROR: Bad WINDOW passed to detect_text_in_region")
         return None
 
-    screenshot = pyautogui.screenshot(region=(
-        window.left,
-        window.top,
-        window.width,
-        window.height
-    ))
-    # screenshot = cv2.imread("imgs/starting_hand.png")
-    screenshot = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
-
-    height, width, _ = screenshot.shape
 
     rel_x1, rel_y1, rel_x2, rel_y2 = rel_coords
-    x1, y1 = int(rel_x1 * width), int(rel_y1 * height)
-    x2, y2 = int(rel_x2 * width), int(rel_y2 * height)
+    abs_x1 = window.left + int(rel_x1 * window.width)
+    abs_y1 = window.top  + int(rel_y1 * window.height)
+    abs_x2 = window.left + int(rel_x2 * window.width)
+    abs_y2 = window.top  + int(rel_y2 * window.height)
+    w = abs_x2 - abs_x1
+    h = abs_y2 - abs_y1
+    if w <= 0 or h <= 0:
+        return None
+    roi_pil = pyautogui.screenshot(region=(abs_x1, abs_y1, w, h))
+
+    roi = cv2.cvtColor(np.array(roi_pil), cv2.COLOR_RGB2BGR)
 
     # DEBUG
     # debug_img = screenshot.copy()
@@ -39,14 +38,13 @@ def detect_text_in_region(window, rel_coords):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
-    roi = screenshot[y1:y2, x1:x2]
 
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
     processed = cv2.dilate(thresh, np.ones((1, 1), np.uint8), iterations=1)
 
     raw = pytesseract.image_to_string(processed, config='-l eng --psm 6')
-    text = raw.strip().upper().replace("\n", " ")
+    text = raw.replace("\n", " ").strip().upper()
     
     return text
 
