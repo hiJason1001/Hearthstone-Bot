@@ -42,7 +42,7 @@ while not exit_bot.exit:
         time.sleep(4)
     
     if in_play_menu(window):
-        time.sleep(4)
+        time.sleep(3)
         if exit_bot.exit:
             break
         pyautogui.moveTo(window.left + menu_play_x * window.width, window.top + menu_play_y * window.height, duration=MOUSE_SPEED)
@@ -60,7 +60,7 @@ while not exit_bot.exit:
                 break
             time.sleep(4)
             break
-        time.sleep(6)
+        time.sleep(5)
     
     if found_match(window, PVP):
         bot.run(SKIP_TURNS)

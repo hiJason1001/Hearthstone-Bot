@@ -33,6 +33,7 @@ class GameBot:
     def reset(self):
         pyautogui.moveTo(self.convert_x(reset_x), self.convert_y(reset_y), duration=MOUSE_SPEED_FAST)
         pyautogui.rightClick()
+        pyautogui.click()
         
     def confirm_replace_hand(self):
         pyautogui.moveTo(self.convert_x(confirm_replace_hand_x), self.convert_y(confirm_replace_hand_y), duration=MOUSE_SPEED_FAST)
