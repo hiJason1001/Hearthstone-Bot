@@ -26,7 +26,10 @@ discover3_x = [0.31, 0.5, 0.69]
 discover3_y = 0.5
 
 end_turn_button_x = 0.81
-end_turn_button_y = 0.47 
+end_turn_button_y = 0.47
+
+end_turn_button_x1, end_turn_button_x12 = 0.78, 0.84
+end_turn_button_y1, end_turn_button_y2 = 0.455, 0.485
 
 # old coord
 # reset_x = 0.9
