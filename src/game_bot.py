@@ -210,7 +210,7 @@ class GameBot:
                 continue
 
             self.window = gw.getWindowsWithTitle("Hearthstone")[0]
-            if self.perform_checks():
+            if exit_bot.exit or game_over(self.window):
                 return
 
             turn = read_turn_state(self.window)
