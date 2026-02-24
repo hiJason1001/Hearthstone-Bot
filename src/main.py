@@ -97,8 +97,8 @@ while not exit_bot.exit:
     print("How did I get here?")
     time.sleep(3)
     pyautogui.moveTo(
-        window.left + error_finding_match_ok_x * window.width,
-        window.top + error_finding_match_ok_y * window.height,
+        window.left + menu_play_x * window.width,
+        window.top + menu_play_y * window.height,
         duration=MOUSE_SPEED,
     )
     pyautogui.click()
